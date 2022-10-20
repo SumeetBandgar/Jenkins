@@ -1,3 +1,3 @@
-def call(String name, String place) {
-    echo "My Name is ${name}. I live in ${place}."
+def call(Map config = [:]) {
+    echo "My Name is ${config.name}. I live in ${config.place}."
 }

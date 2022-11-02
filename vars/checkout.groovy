@@ -1,3 +1,3 @@
 def call() {
-    git url: 'https://github.com/SumeetBandgar/Java.git'
+    git branch: 'hello-world-spring-boot', url: 'https://github.com/SumeetBandgar/Java.git'
 }

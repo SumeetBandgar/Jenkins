@@ -2,17 +2,28 @@
 
 pipeline {
     agent any
+    tools {
+        maven 'MAVEN_HOME'
+    }
     stages {
         stage("Checkout Repo") {
             steps {
-                script {
+                script{
                     checkout.call()
                 }
             }
         }
-        stage("Shared Library") {
+        stage("Build Application") {
             steps {
-                helloWorld(name : "Sumeet", place : "Pune")
+                script{
+                    buildApp.call()
+                }
+            }
+            
+            post {
+                success {
+                    archiveArtifacts 'target/*.jar'
+                }
             }
         }
     }

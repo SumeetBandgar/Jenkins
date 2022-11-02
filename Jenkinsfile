@@ -9,14 +9,14 @@ pipeline {
         stage("Checkout Repo") {
             steps {
                 script{
-                    checkout.call()
+                    buildApp.checkout()
                 }
             }
         }
         stage("Build Application") {
             steps {
                 script{
-                    buildApp.call()
+                    buildApp.build()
                 }
             }
             

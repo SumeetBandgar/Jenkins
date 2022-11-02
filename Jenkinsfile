@@ -6,7 +6,7 @@ pipeline {
         stage("Checkout Repo") {
             steps {
                 script {
-                    checkout()
+                    checkout.call()
                 }
             }
         }

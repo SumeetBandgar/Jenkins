@@ -5,7 +5,9 @@ pipeline {
     stages {
         stage("Checkout Repo") {
             steps {
-                checkout()
+                script {
+                    checkout()
+                }
             }
         }
         stage("Shared Library") {

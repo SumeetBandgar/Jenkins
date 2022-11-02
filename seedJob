@@ -23,26 +23,162 @@ folder('Project-C/C1/C-1.1') {
     description('Project-C => Folder C => Folder for project C 1.1')
 }
 
-pipelineJob("Project-A/A1/greetingJob") {
-  
-  parameters {
-         stringParam('name', "", 'name of the person')
-        }
+pipelineJob('Project-A/A1/jenkins-pipeline-job') {
   definition {
-           cps {
-             script('''
-                 pipeline {
-                    agent any
-                    stages {
-                        stage('Greet') {
-                            steps {
-                                echo "Hello!! ${name}"
-                            }
-                         }
-                      }
-                   }
-              '''.stripIndent())
-       sandbox()
+    cpsScmFlowDefinition {
+      scm {
+        gitSCM {
+          userRemoteConfigs {
+            userRemoteConfig {
+              credentialsId('')
+              name('')
+              refspec('')
+              url('https://github.com/SumeetBandgar/Jenkins.git')
+            }
           }
+          branches {
+            branchSpec {
+              name('*/shared-library-assign3')
+            }
+          }
+          browser {
+            gitWeb {
+              repoUrl('')
+            }
+          }
+          gitTool('')
+        }
       }
+      scriptPath('Jenkinsfile')
+      lightweight(true)
+    }
   }
+}
+
+pipelineJob('Project-A/A2/jenkins-pipeline-job') {
+  definition {
+    cpsScmFlowDefinition {
+      scm {
+        gitSCM {
+          userRemoteConfigs {
+            userRemoteConfig {
+              credentialsId('')
+              name('')
+              refspec('')
+              url('https://github.com/SumeetBandgar/Jenkins.git')
+            }
+          }
+          branches {
+            branchSpec {
+              name('*/shared-library-assign3')
+            }
+          }
+          browser {
+            gitWeb {
+              repoUrl('')
+            }
+          }
+          gitTool('')
+        }
+      }
+      scriptPath('Jenkinsfile')
+      lightweight(true)
+    }
+  }
+}
+
+pipelineJob('Project-B/jenkins-pipeline-job') {
+  definition {
+    cpsScmFlowDefinition {
+      scm {
+        gitSCM {
+          userRemoteConfigs {
+            userRemoteConfig {
+              credentialsId('')
+              name('')
+              refspec('')
+              url('https://github.com/SumeetBandgar/Jenkins.git')
+            }
+          }
+          branches {
+            branchSpec {
+              name('*/shared-library-assign3')
+            }
+          }
+          browser {
+            gitWeb {
+              repoUrl('')
+            }
+          }
+          gitTool('')
+        }
+      }
+      scriptPath('Jenkinsfile')
+      lightweight(true)
+    }
+  }
+}
+
+pipelineJob('Project-C/C1/C-1.1/jenkins-pipeline-job') {
+  definition {
+    cpsScmFlowDefinition {
+      scm {
+        gitSCM {
+          userRemoteConfigs {
+            userRemoteConfig {
+              credentialsId('')
+              name('')
+              refspec('')
+              url('https://github.com/SumeetBandgar/Jenkins.git')
+            }
+          }
+          branches {
+            branchSpec {
+              name('*/shared-library-assign3')
+            }
+          }
+          browser {
+            gitWeb {
+              repoUrl('')
+            }
+          }
+          gitTool('')
+        }
+      }
+      scriptPath('Jenkinsfile')
+      lightweight(true)
+    }
+  }
+}
+
+pipelineJob('Project-C/C2/jenkins-pipeline-job') {
+  definition {
+    cpsScmFlowDefinition {
+      scm {
+        gitSCM {
+          userRemoteConfigs {
+            userRemoteConfig {
+              credentialsId('')
+              name('')
+              refspec('')
+              url('https://github.com/SumeetBandgar/Jenkins.git')
+            }
+          }
+          branches {
+            branchSpec {
+              name('*/shared-library-assign3')
+            }
+          }
+          browser {
+            gitWeb {
+              repoUrl('')
+            }
+          }
+          gitTool('')
+        }
+      }
+      scriptPath('Jenkinsfile')
+      lightweight(true)
+    }
+  }
+}
